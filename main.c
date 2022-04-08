@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-int main(void) \
+int main(void) 
 {
     //과제 1번(if문 이용)
 //    char ch;
