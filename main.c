@@ -1,552 +1,304 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 
-//422 1
+
+
+//476
+//int main()
+//{
+//    int i=3000;
+//    int *p=NULL;
+//    p=&i;
+//    printf("p= %u\n",p);
+//    printf("&i=%u\n\n",&i);
+//
+//    printf("i = %d\n",i);
+//    printf("*p = %d\n",*p);
+//}
+
+
+
+//477
+//int main()
+//{
+//    int x=10,y=20;
+//    int *p;
+//
+//    p=&x;
+//    printf("p=%d\n",p);
+//    printf("*p=%d\n\n",*p);
+//
+//    p=&y;
+//    printf("p=%d\n",p);
+//    printf("*p=%d\n\n",*p);
+//}
+
+
+
+
+//482
+//int main()
+//{
+//    char *pc;
+//    int *pi;
+//    double *pd;
+//
+//    pc=(char*)10000;
+//    pi=(int*)10000;
+//    pd=(double*)10000;
+//    printf("증가 전 pc=%d, pi=%d, pd=%d\n",pc,pi,pd);
+//
+//    pc++;
+//    pi++;
+//    pd++;
+//    printf("증가 후 pc=%d, pi=%d, pd=%d\n",pc,pi,pd);
+//
+//    printf("증가 전 pc+2=%d, pi+2=%d, pd+2=%d\n",pc+2,pi+2,pd+2);
+//}
+
+
+
+
+//484
+//int main()
+//{
+//    int i=10;
+//    int *pi=&i;
+//
+//    printf("i= %d, pi= %p\n",i,pi);
+//    (*pi)++;
+//    printf("i= %d, pi= %p\n",i,pi);
+//
+//    printf("i= %d, pi= %p\n",i,pi);
+//    *pi++;
+//    printf("i= %d, pi= %p\n",i,pi);
+//}
+
+
+
+
+//486
+//void swap(int x,int y)
+//{
+//    int tmp;
+//    printf("x= %d y=%d\n",x,y);
+//
+//    tmp=x;
+//    x=y;
+//    y=tmp;
+//    printf("x= %d y=%d\n",x,y);
+//
+//}
+//
+//int main()
+//{
+//    int a=100,b=200;
+//    printf("a=%d b=%d\n",a,b);
+//    swap(a,b);
+//    printf("a=%d b=%d\n",a,b);
+//
+//}
+
+
+
+//488
+//void swap(int *x,int *y)
+//{
+//    int tmp;
+//
+//    tmp=*x;
+//    *x=*y;
+//    *y=tmp;
+//
+//}
+//
+//int main()
+//{
+//    int a=100,b=200;
+//    printf("a=%d b=%d\n",a,b);
+//    swap(&a,&b);
+//    printf("a=%d b=%d\n",a,b);
+//
+//}
+
+
+
+
+
+//490
+//int get_line_parameter(int x1,int y1,int x2,int y2,float *slope,float *yintercept)
+//{
+//    if(x1==x2)
+//        return -1;
+//    else
+//    {
+//        *slope =(float)(y2-y1)/(float)(x2-x1);
+//        *yintercept = y1-(*slope)*x1;
+//        return 0;
+//    }
+//}
+//
+//int main()
+//{
+//    float s,y;
+//
+//    if(get_line_parameter(3, 3, 6, 6, &s, &y)==-1)
+//        printf("에러\n");
+//    else
+//        printf("기울기는 %f,y절편은 %f\n",s,y);
+//}
+
+
+
+
+//493
+//int main()
+//{
+//    int a[]={10,20,30,40,50};
+//    printf("a=%u\n",a);
+//    printf("a+1=%u\n",a+1);
+//    printf("*a=%d\n",*a);
+//    printf("*(a+1)=%d\n",*(a+1));
+//}
+
+
+
+
+//494
+//int main()
+//{
+//    int a[]={10,20,30,40,50};
+//    int *p;
+//
+//    p=a;
+//    printf("a[0]=%d a[1]=%d a[2]=%d \n",a[0],a[1],a[2]);
+//    printf("p[0]=%d p[1]=%d p[2]=%d \n\n",p[0],p[1],p[2]);
+//
+//    p[0]=60;
+//    p[1]=70;
+//    p[2]=80;
+//
+//    printf("a[0]=%d a[1]=%d a[2]=%d \n",a[0],a[1],a[2]);
+//    printf("p[0]=%d p[1]=%d p[2]=%d \n\n",p[0],p[1],p[2]);
+//
+//}
+
+
+
+//495
+//void sub(int b[],int size)
+//{
+//    b[0]=4;
+//    b[1]=5;
+//    b[2]=6;
+//}
+//
+//int main()
+//{
+//    int a[3]={1,2,3};
+//    printf("%d %d %d \n",a[0],a[1],a[2]);
+//    sub(a,3);
+//    printf("%d %d %d \n",a[0],a[1],a[2]);
+//}
+
+
+
+
+//498
 //#define SIZE 5
-//int main()
+//void print_image(int image[SIZE][SIZE])
 //{
-//    int scores[SIZE];
-//    for(int i=0;i<SIZE;i++)
-//        scores[i]=rand()%100;
-//
-//    for(int i=0;i<SIZE;i++)
-//        printf("scores[%d]=%d\n",i,scores[i]);
-//}
-
-
-
-//423
-//#define STUDENTS 5
-//int main()
-//{
-//    int scores[STUDENTS];
-//    int sum=0;
-//    int i, average;
-//
-//    for(i=0;i<STUDENTS;i++)
-//    {
-//        printf("학생들의 성적을 입력하시오: ");
-//        scanf("%d",&scores[i]);
-//    }
-//    for(i=0;i<STUDENTS;i++)
-//        sum+=scores[i];
-//
-//    average=sum/STUDENTS;
-//    printf("성적 평균= %d\n",average);
-//}
-
-
-
-//430
-//#define SIZE 6
-//int main(void)
-//{
-//    int freq[SIZE]={0};
-//    int i;
-//
-//    for(i=0;i<10000;i++)
-//        ++freq[rand()%6];
-//
-//    printf("================\n");
-//    printf("면 빈도\n");
-//    printf("================\n");
-//
-//    for(i=0;i<SIZE;i++)
-//        printf("%3d %3d \n",i+1,freq[i]);
-//}
-
-
-
-
-
-
-//432
-//#define SIZE 10
-//int main()
-//{
-//    char ans1;
-//    int ans2,i;
-//    int seats[SIZE]={0};
-//    while(1)
-//    {
-//        printf("좌석을 예약하시겠습니까?(y or n):");
-//        scanf(" %c",&ans1);
-//
-//        if(ans1=='n')
-//            break;
-//        printf("--------------------\n");
-//        printf(" 1 2 3 4 5 6 7 8 9 10\n");
-//        printf("--------------------\n");
-//
-//        for(i=0;i<SIZE;i++)
-//            printf(" %d",seats[i]);
-//        printf("\n");
-//
-//        printf("몇번째 좌석을 예약하시겠습니까?");
-//        scanf("%d",&ans2);
-//        if(seats[ans2-1]==0)
-//        {
-//            seats[ans2-1]=1;
-//            printf("예약되었습니다.\n");
-//        }
-//        else
-//            printf("이미 예약된 자리입니다.\n");
-//    }
-//}
-
-
-
-
-//434
-//#define SIZE 10
-//
-//int main()
-//{
-//    int prices[SIZE]={0};
-//    int i, minimum;
-//
-//    printf("------------------------\n");
-//    printf("1 2 3 4 5 6 7 8 9 10\n");
-//    printf("------------------------\n");
-//    srand(time(NULL));
-//    for(i=0;i<SIZE;i++)
-//    {
-//        prices[i]=(rand()%100)+1;
-//        printf("%-3d",prices[i]);
-//    }
-//    printf("\n\n");
-//
-//    minimum=prices[0];
-//    for(i=1;i<SIZE;i++)
-//    {
-//        if(prices[i]<minimum)
-//            minimum=prices[i];
-//    }
-//    printf("최소값은 %d입니다.",minimum);
-//}
-
-
-
-
-
-
-
-//435
-//#define STUDENTS 5
-//int get_average(int scores[],int size);
-//
-//int main()
-//{
-//    int scores[STUDENTS]={1,2,3,4,5};
-//    int avg;
-//
-//    avg=get_average(scores,STUDENTS);
-//    printf("평균은 %d입니다.\n",avg);
-//}
-//
-//int  get_average(int scores[], int size)
-//{
-//    int i;
-//    int sum=0;
-//    for(i=0;i<size;i++)
-//        sum+=scores[i];
-//    return sum/size;
-//}
-
-
-
-
-
-
-//437
-//#define SIZE 7
-//void modify_array(int a[],int size);
-//void print_array(int a[],int size);
-//
-//int main()
-//{
-//    int list[SIZE]={1,2,3,4,5,6,7};
-//    print_array(list, SIZE);
-//    modify_array(list, SIZE);
-//    print_array(list, SIZE);
-//
-//}
-//
-//void modify_array(int a[], int size)
-//{
-//    int i;
-//
-//    for(i=0;i<size;i++)
-//        ++a[i];
-//
-//}
-//
-//void print_array(int a[],int size)
-//{
-//    int i;
-//    for(i=0;i<size;i++)
-//        printf("%3d",a[i]);
-//    printf("\n");
-//}
-
-
-
-
-
-//440
-//#define SIZE 10
-//
-//int main()
-//{
-//    int list[SIZE]={3,2,9,7,1,4,8,0,6,5};
-//
-//    int i,j,temp,least;
-//    for(i=0;i<SIZE-1;i++)
-//    {
-//        least =i;
-//        for(j=i+1;j<SIZE;j++)
-//            if(list[j]<list[least])
-//                least=j;
-//        temp=list[i];
-//        list[i]=list[least];
-//        list[least]=temp;
-//
-//    }
-//    for(i=0;i<SIZE;i++)
-//        printf("%d ",list[i]);
-//    printf("\n");
-//}
-
-
-
-
-
-
-
-//442
-//#define SIZE 10
-//
-//int main()
-//{
-//    int key,i;
-//    int list[SIZE]={1,2,3,4,5,6,7,8,9};
-//
-//    printf("탐색할 값을 입력하시오: ");
-//    scanf("%d",&key);
-//
-//    for(i=0;i<SIZE;i++)
-//        if(list[i]==key)
-//            printf("탐색 성공 인덱스=%d\n",i);
-//    printf("탐색 종료\n");
-//}
-
-
-
-
-//444
-//#define SIZE 16
-//int binary_search(int list[], int n, int key);
-//
-//int main()
-//{
-//    int key;
-//    int grade[SIZE]={2,6,11,13,18,20,22,27,29,30,34,38,41,42,45,47};
-//
-//    printf("탐색할 값을 입력하시오?: ");
-//    scanf("%d",&key);
-//    printf("탐색 결과=%d\n",binary_search(grade,SIZE,key));
-//
-//}
-//
-//int binary_search(int list[], int n, int key)
-//{
-//    int low, high, middle;
-//
-//    low=0;
-//    high=n-1;
-//
-//    while(low<=high)
-//    {
-//        printf("[%d %d]\n",low, high);
-//        middle = (low+high)/2;
-//        if(key==list[middle])
-//            return middle;
-//        else if(key>list[middle])
-//            low=middle+1;
-//        else
-//            high =middle -1;
-//    }
-//    return -1;
-//}
-
-
-
-
-
-//447
-//#define ROWS 3
-//#define COLS 5
-//
-//int main()
-//{
-//    int s[ROWS][COLS];
-//    int i,j;
-//
-//    for(i=0;i<ROWS;i++)
-//        for(j=0;j<COLS;j++)
-//            s[i][j]=rand()%100;
-//
-//    for(i=0;i<ROWS;i++)
-//    {
-//        for(j=0;j<COLS;j++)
-//            printf("%02d ",s[i][j]);
-//        printf("\n");
-//    }
-//}
-
-
-
-
-
-//449
-//#define ROWS 3
-//#define COLS 5
-//int main()
-//{
-//    int a[ROWS][COLS]={{87,98,80,76,3}
-//        ,{99,89,90,90,0},{65,68,50,49,0}};
-//
-//    int i;
-//
-//    for(i=0;i<ROWS;i++)
-//    {
-//        double final_scores=a[i][0]*0.3+a[i][1]*0.4+a[i][2]*0.2+a[i][3]*0.1-a[i][4];
-//        printf("학생#%d의 최종 성적=%10.2f \n",i+1,final_scores);
-//    }
-//
-//}
-
-
-
-
-//450
-//#define ROWS 3
-//#define COLS 3
-//int main()
-//{
-//    int A[ROWS][COLS]={{2,3,0},{8,9,1},{7,0,5}};
-//    int B[ROWS][COLS]={{1,0,0},{1,0,0},{1,0,0}};
-//    int C[ROWS][COLS];
 //    int r,c;
-//
-//    for(r=0;r<ROWS;r++)
-//        for(c=0;c<COLS;c++)
-//            C[r][c]=A[r][c]+B[r][c];
-//
-//    for(r=0;r<ROWS;r++)
+//    for(r=0;r<SIZE;r++)
 //    {
-//        for(c=0;c<COLS;c++)
-//        printf("%d ",C[r][c]);
+//        for(c=0;c<SIZE;c++)
+//            printf("%03d ",image[r][c]);
 //        printf("\n");
 //    }
+//    printf("\n");
 //}
-
-
-
-
-
-
-
-//451
-//#define YEARS 3
-//#define PRODUCATS 5
 //
-//int sum(int scores[YEARS][PRODUCATS]);
+//void brighten_image(int image[SIZE][SIZE])
+//{
+//    int r,c;
+//    int *p;
+//    p=&image[0][0];
+//    for(r=0;r<SIZE;r++)
+//    {
+//        for(c=0;c<SIZE;c++)
+//        {
+//            *p+=10;
+//            p++;
+//        }
+//    }
+//}
+//
 //
 //int main()
 //{
-//    int sales[YEARS][PRODUCATS]={{1,2,3},{4,5,6},{7,8,9}};
-//    int total_sale;
+//    int image[SIZE][SIZE]={{10,20,30,40,50},
+//                           {10,20,30,40,50},
+//                           {10,20,30,40,50},
+//                           {10,20,30,40,50},
+//                           {10,20,30,40,50}};
 //
-//    total_sale=sum(sales);
-//    printf("총매출은 %d입니다.\n",total_sale);
-//}
-//
-//int sum(int scores[YEARS][PRODUCATS])
-//{
-//    int y,p;
-//    int total=0;
-//
-//    for(y=0;y<YEARS;y++)
-//        for(p=0;p<PRODUCATS;p++)
-//            total+=scores[y][p];
-//
-//    return total;
-//}
-
-
-
-
-
-
-
-//453
-//void display(int image[8][16])
-//{
-//    for(int r=0;r<8;r++){
-//        for(int c=0;c<16;c++)
-//        {
-//            if (image[r][c]==0)
-//                printf("*");
-//            else
-//                printf("_");
-//        }
-//        printf("\n");}
-//}
-//
-//void inverse(int img[8][16])
-//{
-//    for(int r=0;r<8;r++)
-//        for(int c=0;c<16;c++)
-//        {
-//            if(img[r][c]==0)
-//                img[r][c]=1;
-//            else
-//                img[r][c]=0;
-//        }
-//}
-//
-//int main()
-//{
-//    int image[8][16]={
-//        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-//        {1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1},
-//        {1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1},
-//        {1,1,1,0,0,0,1,1,0,0,1,1,1,1,1,1},
-//        {1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1},
-//        {1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1},
-//        {1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1},
-//        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
-//
-//    printf("변환전 이미지\n");
-//    display(image);
-//    inverse(image);
-//    printf("\n\n변환후 이미지\n");
-//    display(image);
-//
-//
-//
+//    print_image(image);
+//    brighten_image(image);
+//    print_image(image);
 //
 //}
-
 
 
 
 //실습과제 1번
-//int main ()
+//void get_sum_diff(int x,int y, int *p_sum,*p_diff)
 //{
-//    int days[12]={31,29,31,30,31,30,31,31,30,31,30,31};
-//    for(int i=1;i<=12;i++)
-//    {
-//        printf("%d월은 %d일까지 있습니다.\n",i,days[i-1]);
-//    }
+//    *p_sum=x+y;
+//    *p_diff=x-y;
 //}
-
-
-
-//실습과제 2번
+//
 //int main()
 //{
-//    srand(time(NULL));
-//    int x[10];
-//    for(int i=0;i<=9;i++)
-//        x[i]=rand();
-//    int max=x[0];
-//    int min=x[0];
-//
-//    for(int c=1;c<10;c++)
+//    int x=100,y=200,sum,diff;
+//    get_sum_diff(x, y, &sum, &diff);
+//    printf("원소들의 합=%d\n",sum);
+//    printf("원소들의 차=%d\n",diff);
+//}
+
+//실습과제 2번
+//void array_fill(int *A, int size)
+//{
+//    for(int i=0;i<size;i++)
 //    {
-//        if(x[c]<min)
-//            min=x[c];
+//        A[i]=rand();
 //    }
-//    for(int b=1;b<10;b++)
-//    {
-//        if(x[b]>max)
-//            max=x[b];
-//    }
+//}
 //
-//    printf("최소값: %d\n최대값: %d\n",min,max);
+//int main()
+//{
+//    int a[10]={0};
+//    array_fill(a, 10);
+//    for(int t=0;t<10;t++)
+//        printf("%d ",a[t]);
+//    printf("\n");
 //}
 
 
 
 //실습과제 3번
-//void array_equal(int a[],int b[],int size)
+//void array_print(int *A, int n)
 //{
-//    for(int i=0;i<size;i++)
-//    {
-//        b[i]=a[i];
-//    }
+//    int i;
+//    printf("A[]={ ");
+//    for(i=0;i<n;i++)
+//        printf("%d ",A[i]);
+//    printf("}\n");
 //}
 //
 //int main()
 //{
-//    int x[10]={1,2,3,0,0,0,0,0,0,0};
-//    for(int i=0;i<10;i++)
-//    printf("%d ",x[i]);
-//    printf("\n");
-//    int y[10];
-//    array_equal(x,y,10);
-//    for(int i=0;i<10;i++)
-//    printf("%d ",y[i]);
-//    printf("\n");
+//    int x[10]={1,2,3,4};
+//    array_print(x, 10);
 //}
-
-
-
-//실습과제 4번
-//int main()
-//{
-//    srand(time(NULL));
-//    int freq[10]={0};
-//    for(int i=0;i<100;i++)
-//        ++freq[rand()%10];
-//    int max=0;
-//        for(int b=1;b<10;b++)
-//        {
-//            if(freq[b]>freq[max])
-//                max=b;
-//        }
-//    printf("가장 많이 나온수: %d\n",max+1);
-//}
-
-
-
-
-
-
-//실습과제 5번
-//int main()
-//{
-//    int h=0,y=0;
-//    int x[][5]={{12,56,32,16,98},
-//                {99,56,34,41,3},
-//                {65,3,87,78,21}};
-//    for(int i=0;i<3;i++)
-//    {
-//        for(int t=0;t<5;t++)
-//            h+=x[i][t];
-//        printf("%d행의 합계: %d\n",i,h);
-//        h=0;
-//    }
-//    for(int j=0;j<5;j++)
-//    {
-//        for(int p=0;p<3;p++)
-//            y+=x[p][j];
-//        printf("%d열의 합계: %d\n",j,y);
-//        y=0;
-//    }
 //
-//}
