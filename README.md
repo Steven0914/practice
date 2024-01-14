@@ -6,7 +6,8 @@
 - ML1 - ML 실전 개발 프로젝트
 - ML2 - ML의 모든 것 
 - pandas - Pandas 및 Python 을 이용한 데이터 분석 : 마스터 클래스
-- Aimer4 : Aimer 4기 진행중 소스파일
+- Aimer4 - Aimer 4기 진행중 소스파일
+- kaggle - 캐글 문제 연습한 커널
 
 ## 기타파일
 - 객체 지향프로그래밍
